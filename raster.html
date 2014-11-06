@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>Raster</title>
+<style>
+img {display:none;}
+</style>
+
+<script src="js/paper-full.min.js"></script>
+<script type="text/paperscript" canvas="canvas">
+
+var raster = new Raster('circle');
+raster.position = view.center;
+
+window.raster = this;
+console.log(view);
+
+function onResize(event){
+	raster.position = view.top;
+}
+
+function onFrame(event){
+	raster.position.x += 1;
+}
+
+</script>
+
+</head>
+<body>
+
+<canvas id="canvas" resize="true" keepalive="true"></canvas>
+
+<img id="circle" src="images/layer.png" />
+
+
+</body>
+</html>
