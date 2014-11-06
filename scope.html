@@ -3,20 +3,23 @@
 <script src="js/paper-full.min.js"></script>
 <script type="text/javascript">
 
+	paper.install(window);
 	window.onload = function() {
-		var canvas = document.getElementById('canvas');
 
+		var canvas = document.getElementById('canvas');
 		paper.setup(canvas);
 
-			var path = new paper.Path();
+		var path = new paper.Path();
 		path.strokeColor = 'black';
 
-		var start = new paper.Point(100, 100);
+		var start = new paper.Point(0, 100);
 		path.moveTo(start);
-		for(var i=0; i<100; i++){
-			path.lineTo(start.add([ (i*5), (i*66)%10 ]));
+		
+		for(var i=0; i<1000; i++){
+			path.lineTo(start.add([ (i*2), Math.sin((i*40))*Math.floor(Math.random()*50) ]));
 		}
-		paper.view.draw();	
+		
+		paper.view.draw();
 
 	}
 

@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>Scope 2</title>
+<script src="js/paper-full.min.js"></script>
+<script type="text/paperscript" canvas="canvas">
+
+var path = new paper.Path();
+		path.strokeColor = 'black';
+		var start = new paper.Point(0, 100);
+		path.moveTo(start);
+
+		
+		//paper.view.draw();
+
+function onResize(event){
+	//raster.position = view.center;
+}
+
+function onFrame(event){
+		
+		for(var i=0; i<1000; i++){
+			path.lineTo(start.add([ (i*2), Math.sin((i*40))*Math.random()*50 ]));
+		}
+		paper.view.draw();
+}
+
+</script>
+
+</head>
+<body>
+
+<canvas id="canvas" resize="true" keepalive="true"></canvas>
+
+
+</body>
+</html>
+
+
