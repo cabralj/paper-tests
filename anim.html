@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>Anim</title>
+<script src="js/paper-full.min.js"></script>
+<script type="text/paperscript" canvas="canvas">
+
+// Create new objs
+var count = new PointText(new Point(10,32));
+var time = new PointText(new Point(10,64));
+var delta = new PointText(new Point(10,92));
+
+// Define Style
+var style = {fontSize:32,fillColor:"#FF000"}
+count.style = style;
+time.style = style;
+delta.style = style;
+
+// Update 
+function onFrame(event){
+	count.content = event.count;
+	time.content = event.time;
+	delta.content = event.delta;
+}
+
+</script>
+
+</head>
+<body>
+
+<canvas id="canvas" resize="true" keepalive="true"></canvas>
+
+
+</body>
+</html>
+
+
